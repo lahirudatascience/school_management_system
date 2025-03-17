@@ -21,3 +21,12 @@ print(student.calculate_average())
 # student.assign_grades({"History": 110})  # Invalid grade example
 student.assign_grades({})  # No grades assigned, should default to average = 0
 print(student.calculate_average())
+
+
+#Question 01 Example Task c
+# Trying to update SSN with setter method
+try:
+    student.set_ssn("987654321")
+    print("Updated Student SSN:", student.get_ssn())
+except ValueError as e:
+    print(e)
