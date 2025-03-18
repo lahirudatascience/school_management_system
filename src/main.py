@@ -11,7 +11,6 @@ staff = Staff("Mrs. Johnson", 50, "789 Oak St", "ST3001", "Administrator")
 # Printing information for each object
 print(student.display_info())
 print(teacher.display_info())
-print(staff.display_info())
 
 
 #Question 01 Example Task b
@@ -39,13 +38,10 @@ print(student.role_duties())
 print(teacher.display_info())
 print(teacher.role_duties())
 
-print(staff.display_info())
-print(staff.role_duties())
-
 # Question 01 Example Task e
 teacher.schedule_classes({"Monday": "Algebra", "Wednesday": "Geometry", "Friday": "Calculus"})
 
-
+# Question 01 Example Task f
 # Marking attendance
 student.mark_attendance("Math", True)
 student.mark_attendance("Math", False)
@@ -55,3 +51,10 @@ student.mark_attendance("Science", True)
 student.mark_attendance("Science", False)
 print(student.get_attendance_summary())
 print(student.display_info())
+
+# Question 01 Example Task g
+staff = Staff("Mrs. Johnson", 50, "789 Oak St", "112233445", "Administrator", 50000, 10, "ST3001")
+staff.calculate_salary()
+print(staff.get_salary())
+# Printing staff information including salary details
+print(staff.display_info())
