@@ -11,6 +11,7 @@ class Student(Person):
         super().__init__(name, age, address)
         self.student_id = student_id
         self.grades = {}  # Dictionary to store grades for subjects
+        self.attendance_record = {}  # Dictionary to store attendance
 
     # Method to assign grades to subjects with validation
     def assign_grades(self, grades):
@@ -41,6 +42,31 @@ class Student(Person):
         """
         return f"{self.name} is a student with ID {self.student_id}. Their responsibilities include attending classes, and taking exams."
     
+    # Method to track attendance
+    def mark_attendance(self, subject, present):
+        if subject not in self.attendance_record:
+            self.attendance_record[subject] = []
+        self.attendance_record[subject].append(present)
+
+    # Method to display attendance summary
+    def get_attendance_summary(self):
+        summary = {}
+        for subject, records in self.attendance_record.items():
+            total_classes = len(records)
+            attended_classes = sum(records)
+            attendance_percentage = (attended_classes / total_classes) * 100 if total_classes > 0 else 0
+            summary[subject] = f"{attended_classes}/{total_classes} ({attendance_percentage:.2f}%)"
+        return summary 
+    
     # Method to display common information
     def display_info(self):
-        return f"{super().display_info()}, Student ID: {self.student_id}"
+        avg_grade = self.calculate_average()
+        attendance_summary = self.get_attendance_summary()
+        attendance_display = "\n".join([f"{subject}: {summary}" for subject, summary in attendance_summary.items()])
+        
+        return (
+            f"{super().display_info()}\n"
+            f"Student ID: {self.student_id}\n"
+            f"Average Grade: {avg_grade:.2f}\n"
+            f"Attendance Record:\n{attendance_display}"
+        )
