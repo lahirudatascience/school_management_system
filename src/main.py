@@ -30,3 +30,14 @@ try:
     print("Updated Student SSN:", student.get_ssn())
 except ValueError as e:
     print(e)
+
+#Question 01 Example Task d
+# Printing information for each object
+print(student.display_info())
+print(student.role_duties())
+
+print(teacher.display_info())
+print(teacher.role_duties())
+
+print(staff.display_info())
+print(staff.role_duties())

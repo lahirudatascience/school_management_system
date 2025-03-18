@@ -33,6 +33,18 @@ class Person:
             self.__ssn = new_ssn
         else:
             raise ValueError("Invalid SSN format. SSN must be a 9-digit number.")
+        
+    # General method to describe responsibilities
+    def role_duties(self):
+
+        """
+        Describe general responsibilities.
+
+        Returns:
+            str: A description of general responsibilities with person name.
+        """
+
+        return f"{self.name} has general responsibilities in the school."
     
     # Method to display common information
     def display_info(self):

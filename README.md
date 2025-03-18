@@ -69,10 +69,6 @@ Methods:
 - `get_salary()` - Returns the calculated salary.
 - `role_duties()` - Overrides base method to define staff responsibilities.
 
-## Polymorphism in Action
-
-A function `display_person_info(person: Person)` demonstrates polymorphism by displaying information for any instance of `Person` or its subclasses, ensuring a uniform approach while maintaining unique role-specific behaviors.
-
 ## Installation and Usage
 
 1. Clone the repository:

@@ -31,6 +31,16 @@ class Student(Person):
             return 0  # Default the average to 0 if no grades are assigned
         return sum(self.grades.values()) / len(self.grades)
     
+    # Overriding role_duties to define student-specific responsibilities
+    def role_duties(self):
+        """
+        Describe specific responsibilities for a student.
+
+        Returns:
+            str: A description of student responsibilities with name and student ID.
+        """
+        return f"{self.name} is a student with ID {self.student_id}. Their responsibilities include attending classes, and taking exams."
+    
     # Method to display common information
     def display_info(self):
         return f"{super().display_info()}, Student ID: {self.student_id}"
